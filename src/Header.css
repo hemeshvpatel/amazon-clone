@@ -2,6 +2,10 @@
   background-color: #131921;
   display: flex;
   align-items: center;
+  /* Following will make nav bar stay at the top with nothing above it */
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 .header__logo {
@@ -12,12 +16,52 @@
   margin-top: 18px;
 }
 
+.header__optionCart {
+  display: flex;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+}
+
+.header__cartCount {
+  font-size: 13px;
+  font-weight: 800;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
 .header__search {
   display: flex;
   flex: 1;
 }
 
-.header__searchInput {
+.header__link {
+  color: white;
+  text-decoration: none;
+}
+
+.header__nav {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.header__option {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.header__optionLineOne {
+  font-size: 10px;
+}
+
+.header__optionLineTwo {
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.header .header__searchInput {
   height: 12px;
   padding: 10px;
   border: none;

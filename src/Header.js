@@ -2,6 +2,7 @@ import React from "react";
 import "./Header.css";
 import { Link } from "react-router-dom";
 import SearchIcon from "@material-ui/icons/Search";
+import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 
 function Header() {
   return (
@@ -24,32 +25,40 @@ function Header() {
       </div>
 
       {/* {3 Links} */}
-      <div className="header__Nav">
+      <div className="header__nav">
         {/* {1st Link} */}
         <Link to="/login" className="header__link">
           <div className="header__option">
-            <span>Hello,</span>
-            <span>Sign In</span>
+            <span className="header__optionLineOne">Hello,</span>
+            <span className="header__optionLineTwo">Sign In</span>
           </div>
         </Link>
 
         {/* {2nd Link} */}
         <Link to="/" className="header__link">
           <div className="header__option">
-            <span>Returns</span>
-            <span>& Orders</span>
+            <span className="header__optionLineOne">Returns</span>
+            <span className="header__optionLineTwo">& Orders</span>
           </div>
         </Link>
 
         {/* {3rd Link} */}
         <Link to="/" className="header__link">
           <div className="header__option">
-            <span>Your</span>
-            <span>Prime</span>
+            <span className="header__optionLineOne">Your</span>
+            <span className="header__optionLineTwo">Prime</span>
           </div>
         </Link>
 
         {/* {4th Link} */}
+        <Link to="/checkout">
+          <div className="header__optionCart">
+            {/* {shopping cart icon} */}
+            <ShoppingCartIcon />
+            {/* {number of items in the basket} */}
+            <span className="header__cartCount">0</span>
+          </div>
+        </Link>
       </div>
 
       {/* {Basket icon with number} */}
