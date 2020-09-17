@@ -3,8 +3,13 @@ import "./Header.css";
 import { Link } from "react-router-dom";
 import SearchIcon from "@material-ui/icons/Search";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
+import { useStateValue } from "./StateProvider";
 
 function Header() {
+  const [{ cart }] = useStateValue();
+
+  console.log("Current Cart: ", cart);
+
   return (
     //   change div to nav for html5
     <nav className="header">
@@ -56,7 +61,7 @@ function Header() {
             {/* {shopping cart icon} */}
             <ShoppingCartIcon />
             {/* {number of items in the basket} */}
-            <span className="header__cartCount">0</span>
+            <span className="header__cartCount">{cart?.length}</span>
           </div>
         </Link>
       </div>

@@ -1,14 +1,17 @@
 // Setup data layer
 // We need this to track the cart
-
-import { createContext, useContext, useReducer } from "react";
-
+import React, { createContext, useContext, useReducer } from "react";
 // Data Layer
 export const StateContext = createContext();
 
 // Build a provider
-export const StateProvider = ({ reducer, initiateState, children }) => {
-  <StateContext.Provider value={useReducer(reduce, initializeState)}>
-    {children}
-  </StateContext.Provider>;
+export const StateProvider = ({ reducer, initialState, children }) => {
+  return (
+    <StateContext.Provider value={useReducer(reducer, initialState)}>
+      {children}
+    </StateContext.Provider>
+  );
 };
+
+// This is how we use it inside of a component
+export const useStateValue = () => useContext(StateContext);
