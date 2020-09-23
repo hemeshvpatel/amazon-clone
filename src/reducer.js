@@ -1,17 +1,7 @@
 //Reducer is where data layer logic goes
 
 export const initialState = {
-  cart: [
-    {
-      id: "00002",
-      title:
-        "All-new Blink Outdoor – wireless, weather-resistant HD security camera with two-year battery life and motion detection – 1 camera kit",
-      price: 99.99,
-      rating: 4,
-      image:
-        "https://images-na.ssl-images-amazon.com/images/I/61dymHa0ECL._SL1000_.jpg",
-    },
-  ],
+  cart: [],
   user: null,
 };
 
@@ -21,6 +11,11 @@ export const getCartTotal = (cart) =>
 const reducer = (state, action) => {
   console.log(action);
   switch (action.type) {
+    case "SET_USER":
+      return {
+        ...state,
+        user: action.user,
+      };
     case "ADD_TO_CART":
       // Logic for adding item to cart
       return {
